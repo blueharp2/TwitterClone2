@@ -35,6 +35,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9000A6D31D0F4D9300026EE1 /* App Global */ = {
+			isa = PBXGroup;
+			children = (
+				90B58F391D0F4BD40037C349 /* AppDelegate.swift */,
+				90B58F401D0F4BD40037C349 /* Assets.xcassets */,
+				90B58F451D0F4BD40037C349 /* Info.plist */,
+			);
+			name = "App Global";
+			sourceTree = "<group>";
+		};
+		9000A6D41D0F4DAA00026EE1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				90B58F3B1D0F4BD40037C349 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9000A6D51D0F4DC400026EE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				90B58F3D1D0F4BD40037C349 /* Main.storyboard */,
+				90B58F421D0F4BD40037C349 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		90B58F2D1D0F4BD40037C349 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +81,9 @@
 		90B58F381D0F4BD40037C349 /* TwitterClone2 */ = {
 			isa = PBXGroup;
 			children = (
-				90B58F391D0F4BD40037C349 /* AppDelegate.swift */,
-				90B58F3B1D0F4BD40037C349 /* ViewController.swift */,
-				90B58F3D1D0F4BD40037C349 /* Main.storyboard */,
-				90B58F401D0F4BD40037C349 /* Assets.xcassets */,
-				90B58F421D0F4BD40037C349 /* LaunchScreen.storyboard */,
-				90B58F451D0F4BD40037C349 /* Info.plist */,
+				9000A6D31D0F4D9300026EE1 /* App Global */,
+				9000A6D41D0F4DAA00026EE1 /* Controllers */,
+				9000A6D51D0F4DC400026EE1 /* Views */,
 			);
 			path = TwitterClone2;
 			sourceTree = "<group>";
@@ -288,6 +312,7 @@
 				90B58F4A1D0F4BD40037C349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
