@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    var dataSource = [Tweet](){
+        didSet{
+            //Reload Data
+            //if let Tweets
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,3 +32,21 @@ class ViewController: UIViewController {
 
 }
 
+
+
+
+extension ViewController:UITableViewDataSource{
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
+        let tweet = self.dataSource[indexPath.row]
+        
+        cell.textLabel?.text = tweet.text
+        
+        return cell
+    }
+}
