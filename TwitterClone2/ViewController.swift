@@ -32,8 +32,17 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.update()
         
-        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
+//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
+//            if let tweets = tweets{
+//                self.dataSource = tweets
+//            }
+//        }
+    }
+    
+    func update(){
+        API.shared.getTweets { (tweets) in
             if let tweets = tweets{
                 self.dataSource = tweets
             }

@@ -16,6 +16,8 @@ class API{
     
     var account: ACAccount?
     
+    
+    
     private func logIn(completion: (account: ACAccount?) ->()){
         //Set up Account Store
         let accountstore = ACAccountStore()
@@ -35,6 +37,7 @@ class API{
             if granted{
                 if let account = accountstore.accountsWithAccountType(accountType).first as? ACAccount{
                     completion(account: account)
+                    return
                 }
                 
                 print("Error: No Twitter accounts were found on this device")
@@ -124,7 +127,23 @@ class API{
                 completion(tweets: nil)
             }
         }
-        
     }
     
+    
+    func getTweets(completion:(tweets:[Tweet]?) ->()){
+        
+        if let _ = self.account{
+            self.GETTimeline(completion)
+        }else{
+            self.logIn({ (account) in
+                if let account = account{
+                    API.shared.account = account
+                    self.GETTimeline(completion)
+                    
+                }else{
+                    print("Account is nil")
+                }
+            })
+        }
+    }
 }
