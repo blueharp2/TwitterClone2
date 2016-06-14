@@ -49,11 +49,13 @@ class API{
     }
     
     private func GETOAuthUser(completion:(user:User?) ->()){
-        
+        //Make a request and give it a type
         let request  = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL (string:"https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
         
+        //set the account
         request.account = self.account
         
+        //make request and deal with data, response, or errors
         request.performRequestWithHandler { (data, response, error) in
            
             if let _ = error{
@@ -89,7 +91,40 @@ class API{
         
     }
     
-    
-    
+    private func GETTimeline(completion:(tweets:[Tweet]?) ->()){
+        
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+        
+        request.account = self.account
+        
+        request.performRequestWithHandler { (data, response, error) in
+            if let _ = error{
+                print("Error: SLRequest type get for user Timeline could not be completed.")
+                completion(tweets: nil)
+                return
+            }
+            
+            switch response.statusCode{
+            case 200...299:
+                
+                JSONParser.tweetJSONFrom(data, completion: { (success, tweets) in
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ 
+                        completion(tweets: tweets)
+                    })
+                })
+            
+                
+            case 400...499:
+                print("Client Error: \(response.statusCode)")
+            case 500...599:
+                print("Server Error: \(response.statusCode)")
+                    completion(tweets: nil)
+            default:
+                print("Error: \(response.statusCode)")
+                completion(tweets: nil)
+            }
+        }
+        
+    }
     
 }
