@@ -75,8 +75,33 @@
                     <view key="view" contentMode="scaleToFill" id="ibE-D7-xga">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Text Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9d-Ye-who">
+                                <rect key="frame" x="20" y="289" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytl-ex-n5o">
+                                <rect key="frame" x="257" y="320" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E9d-Ye-who" secondAttribute="trailing" constant="20" id="DJN-pN-jh7"/>
+                            <constraint firstItem="E9d-Ye-who" firstAttribute="top" secondItem="tOz-X2-kUN" secondAttribute="bottom" constant="225" id="Hfm-ch-wN8"/>
+                            <constraint firstItem="Ytl-ex-n5o" firstAttribute="centerX" secondItem="ibE-D7-xga" secondAttribute="centerX" id="cLd-jV-wcF"/>
+                            <constraint firstItem="Ytl-ex-n5o" firstAttribute="top" secondItem="E9d-Ye-who" secondAttribute="bottom" constant="10" id="mvZ-L0-j26"/>
+                            <constraint firstItem="E9d-Ye-who" firstAttribute="leading" secondItem="ibE-D7-xga" secondAttribute="leading" constant="20" id="qjz-8R-EZA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tweetLabel" destination="E9d-Ye-who" id="UU5-AG-DcC"/>
+                        <outlet property="userNameLabel" destination="Ytl-ex-n5o" id="Gdc-UY-4nx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wS-i1-urP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

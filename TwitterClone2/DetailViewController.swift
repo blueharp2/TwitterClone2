@@ -10,6 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

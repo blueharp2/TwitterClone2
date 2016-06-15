@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
+        self.navigationItem.title = "Tweets"
     }
     
     override func viewWillAppear(animated: Bool) {
