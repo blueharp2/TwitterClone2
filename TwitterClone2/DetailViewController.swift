@@ -19,12 +19,16 @@ class DetailViewController: UIViewController,Identity {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if let tweet = self.tweet{
+            if let retweet = tweet.retweet{
+                self.tweetLabel.text = retweet.text
+                self.userNameLabel.text = retweet.user?.name
+            }else{
+            
             self.tweetLabel.text = tweet.text
             self.userNameLabel.text = tweet.user?.name
+            }
         }
-
-        
     }
-
 }
