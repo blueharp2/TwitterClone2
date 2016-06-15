@@ -81,8 +81,41 @@
                     <view key="view" contentMode="scaleToFill" id="rOl-hp-7Ky">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-uu-7va">
+                                <rect key="frame" x="20" y="40" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="vhH-Tj-xee" eventType="touchUpInside" id="vSl-dL-8Tx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQl-h3-CUp">
+                                <rect key="frame" x="234" y="289" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-XF-dEf">
+                                <rect key="frame" x="244" y="318" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cQl-h3-CUp" firstAttribute="top" secondItem="J1u-Sf-ped" secondAttribute="bottom" constant="269" id="Aow-Gf-Qze"/>
+                            <constraint firstItem="cQl-h3-CUp" firstAttribute="centerX" secondItem="rOl-hp-7Ky" secondAttribute="centerX" id="LfK-a5-Ldd"/>
+                            <constraint firstItem="IAV-uu-7va" firstAttribute="top" secondItem="J1u-Sf-ped" secondAttribute="bottom" constant="20" id="UhU-Oz-5M1"/>
+                            <constraint firstItem="IAV-uu-7va" firstAttribute="leading" secondItem="rOl-hp-7Ky" secondAttribute="leading" constant="20" id="byS-oR-Rdm"/>
+                            <constraint firstItem="xEM-XF-dEf" firstAttribute="top" secondItem="cQl-h3-CUp" secondAttribute="bottom" constant="8" id="fc5-wP-XoM"/>
+                            <constraint firstItem="xEM-XF-dEf" firstAttribute="centerX" secondItem="rOl-hp-7Ky" secondAttribute="centerX" id="rzm-Qs-twa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="xEM-XF-dEf" id="iao-NH-oqV"/>
+                        <outlet property="userNameLabel" destination="cQl-h3-CUp" id="Jbl-EX-XU8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecM-GD-IYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
