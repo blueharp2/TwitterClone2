@@ -21,6 +21,7 @@ class DetailViewController: UIViewController,Identity {
         
         if let tweet = self.tweet{
             self.tweetLabel.text = tweet.text
+            self.userNameLabel.text = tweet.user?.name
         }
 
         
