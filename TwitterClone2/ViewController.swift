@@ -21,17 +21,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupTableView()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.update()
         
-//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
-//            if let tweets = tweets{
-//                self.dataSource = tweets
-//            }
-//        }
     }
     
     func update(){
@@ -40,6 +36,11 @@ class ViewController: UIViewController {
                 self.dataSource = tweets
             }
         }
+    }
+    
+    func setupTableView(){
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 }
 
