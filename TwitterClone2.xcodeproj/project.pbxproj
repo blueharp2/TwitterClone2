@@ -64,9 +64,9 @@
 		9000A6D41D0F4DAA00026EE1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9056F3D91D1219EA00D0E48F /* ProfileViewController.swift */,
-				9056F3D51D120CF400D0E48F /* DetailViewController.swift */,
 				90B58F3B1D0F4BD40037C349 /* ViewController.swift */,
+				9056F3D51D120CF400D0E48F /* DetailViewController.swift */,
+				9056F3D91D1219EA00D0E48F /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

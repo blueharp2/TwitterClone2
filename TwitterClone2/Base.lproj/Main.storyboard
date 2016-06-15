@@ -113,8 +113,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="locationLabel" destination="xEM-XF-dEf" id="iao-NH-oqV"/>
-                        <outlet property="userNameLabel" destination="cQl-h3-CUp" id="Jbl-EX-XU8"/>
+                        <outlet property="locationLabel" destination="xEM-XF-dEf" id="40u-ya-pky"/>
+                        <outlet property="userNameLabel" destination="cQl-h3-CUp" id="hcT-aN-9Z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecM-GD-IYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
