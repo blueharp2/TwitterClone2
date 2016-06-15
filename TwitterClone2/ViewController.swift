@@ -43,6 +43,16 @@ class ViewController: UIViewController {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == DetailViewController.id(){
+            guard let detailViewController = segue.destinationViewController as? DetailViewController else{return}
+            guard let indexPath = self.tableView.indexPathForSelectedRow else {return}
+            
+            detailViewController.tweet = self.dataSource[indexPath.row]
+            
+        }
+    }
 }
 
 

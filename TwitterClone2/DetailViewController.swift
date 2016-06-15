@@ -8,14 +8,20 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,Identity {
 
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     
+    var tweet = Tweet?()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let tweet = self.tweet{
+            self.tweetLabel.text = tweet.text
+        }
 
         
     }
