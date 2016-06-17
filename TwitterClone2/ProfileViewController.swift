@@ -13,7 +13,12 @@ class ProfileViewController: UIViewController, Identity {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    var user = User?()
+    var user = User?(){
+        didSet{
+            self.userNameLabel.text = user?.name
+            self.locationLabel.text = user?.location
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -24,11 +29,9 @@ class ProfileViewController: UIViewController, Identity {
         super.viewWillAppear(animated)
         self.update()
         
-//        if let user = self.user{
-//            self.userNameLabel.text = user.name
-//            self.locationLabel.text = user.location
-//        }
-    }
+            self.userNameLabel.text = self.user?.name
+            self.locationLabel.text = self.user?.location
+            }
     
     func update(){
         API.shared.GETOAuthUser { (user) in
