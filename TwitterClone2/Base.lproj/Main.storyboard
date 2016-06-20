@@ -145,17 +145,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ncs-6c-3KS">
+                                <rect key="frame" x="208" y="98" width="185" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="5TG-hP-zo8"/>
+                                    <constraint firstAttribute="width" constant="185" id="ebi-VK-Tmz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="E9d-Ye-who" secondAttribute="trailing" constant="20" id="DJN-pN-jh7"/>
                             <constraint firstItem="E9d-Ye-who" firstAttribute="top" secondItem="tOz-X2-kUN" secondAttribute="bottom" constant="225" id="Hfm-ch-wN8"/>
+                            <constraint firstItem="ncs-6c-3KS" firstAttribute="centerX" secondItem="ibE-D7-xga" secondAttribute="centerX" id="Yuy-gU-yc3"/>
                             <constraint firstItem="Ytl-ex-n5o" firstAttribute="centerX" secondItem="ibE-D7-xga" secondAttribute="centerX" id="cLd-jV-wcF"/>
+                            <constraint firstItem="E9d-Ye-who" firstAttribute="top" secondItem="ncs-6c-3KS" secondAttribute="bottom" constant="8" id="hTo-IX-7QE"/>
                             <constraint firstItem="Ytl-ex-n5o" firstAttribute="top" secondItem="E9d-Ye-who" secondAttribute="bottom" constant="10" id="mvZ-L0-j26"/>
                             <constraint firstItem="E9d-Ye-who" firstAttribute="leading" secondItem="ibE-D7-xga" secondAttribute="leading" constant="20" id="qjz-8R-EZA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profileImageView" destination="ncs-6c-3KS" id="qqg-3j-FG5"/>
                         <outlet property="tweetLabel" destination="E9d-Ye-who" id="UU5-AG-DcC"/>
                         <outlet property="userNameLabel" destination="Ytl-ex-n5o" id="Gdc-UY-4nx"/>
                     </connections>

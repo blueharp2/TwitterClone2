@@ -12,6 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var cache: Cache<UIImage>?{
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            return delegate.cache
+        }
+        return nil
+    }
+    
     var dataSource = [Tweet](){
         didSet{
             self.tableView.reloadData()
