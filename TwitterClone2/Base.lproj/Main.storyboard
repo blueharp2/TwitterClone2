@@ -145,11 +145,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ncs-6c-3KS">
-                                <rect key="frame" x="208" y="98" width="185" height="183"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ncs-6c-3KS">
+                                <rect key="frame" x="260" y="201" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="183" id="5TG-hP-zo8"/>
-                                    <constraint firstAttribute="width" constant="185" id="ebi-VK-Tmz"/>
+                                    <constraint firstAttribute="height" constant="80" id="5TG-hP-zo8"/>
+                                    <constraint firstAttribute="width" constant="80" id="ebi-VK-Tmz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
