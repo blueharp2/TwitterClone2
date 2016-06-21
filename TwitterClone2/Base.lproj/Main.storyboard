@@ -42,6 +42,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cwn-rJ-ou8" id="2jN-lF-iyt"/>
+                        <segue destination="8b4-X8-gre" kind="show" identifier="DetailViewController" action="showDetailViewController:sender:" id="dYj-aR-o7N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -142,6 +143,8 @@
                             <constraint firstItem="E9d-Ye-who" firstAttribute="leading" secondItem="ibE-D7-xga" secondAttribute="leading" constant="20" id="qjz-8R-EZA"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileImageView" destination="ncs-6c-3KS" id="qqg-3j-FG5"/>
                         <outlet property="tweetLabel" destination="E9d-Ye-who" id="UU5-AG-DcC"/>
