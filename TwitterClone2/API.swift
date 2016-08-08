@@ -94,9 +94,9 @@ class API{
         
     }
     
-    private func GETTimeline(completion:(tweets:[Tweet]?) ->()){
+    private func GETTimeline(urlString: String, completion:(tweets:[Tweet]?) ->()){
         
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: urlString), parameters: nil)
         
         request.account = self.account
         
@@ -111,17 +111,17 @@ class API{
             case 200...299:
                 
                 JSONParser.tweetJSONFrom(data, completion: { (success, tweets) in
-                    NSOperationQueue.mainQueue().addOperationWithBlock({ 
+                    NSOperationQueue.mainQueue().addOperationWithBlock({
                         completion(tweets: tweets)
                     })
                 })
-            
+                
                 
             case 400...499:
                 print("Client Error: \(response.statusCode)")
             case 500...599:
                 print("Server Error: \(response.statusCode)")
-                    completion(tweets: nil)
+                completion(tweets: nil)
             default:
                 print("Error: \(response.statusCode)")
                 completion(tweets: nil)
@@ -129,20 +129,78 @@ class API{
         }
     }
     
+//    private func GETTimeline(completion:(tweets:[Tweet]?) ->()){
+//        
+//        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+//        
+//        request.account = self.account
+//        
+//        request.performRequestWithHandler { (data, response, error) in
+//            if let _ = error{
+//                print("Error: SLRequest type get for user Timeline could not be completed.")
+//                completion(tweets: nil)
+//                return
+//            }
+//            
+//            switch response.statusCode{
+//            case 200...299:
+//                
+//                JSONParser.tweetJSONFrom(data, completion: { (success, tweets) in
+//                    NSOperationQueue.mainQueue().addOperationWithBlock({ 
+//                        completion(tweets: tweets)
+//                    })
+//                })
+//            
+//                
+//            case 400...499:
+//                print("Client Error: \(response.statusCode)")
+//            case 500...599:
+//                print("Server Error: \(response.statusCode)")
+//                    completion(tweets: nil)
+//            default:
+//                print("Error: \(response.statusCode)")
+//                completion(tweets: nil)
+//            }
+//        }
+//    }
+    
     
     func getTweets(completion:(tweets:[Tweet]?) ->()){
         
         if let _ = self.account{
-            self.GETTimeline(completion)
+            //self.GETTimeline(completion)
+            self.GETTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
         }else{
             self.logIn({ (account) in
                 if let account = account{
                     API.shared.account = account
-                    self.GETTimeline(completion)
+//                    self.GETTimeline(completion)
+                    self.GETTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
                     
                 }else{
                     print("Account is nil")
                 }
+            })
+        }
+    }
+    
+    
+    
+    func getUserTweets(userName:String, completion:(tweets:[Tweet]?) ->()){
+        self.GETTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(userName)", completion: completion)
+    }
+    
+    
+    
+    func getImages(urlString:String, completion:(image:UIImage) ->()){
+        NSOperationQueue().addOperationWithBlock { 
+            guard let urlString = NSURL(string: urlString) else {return}
+            guard let data = NSData(contentsOfURL: urlString) else {return}
+            
+            guard let image = UIImage(data: data) else {return}
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({ 
+                completion(image: image)
             })
         }
     }

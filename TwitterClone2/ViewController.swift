@@ -8,9 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var cache: Cache<UIImage>?{
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            return delegate.cache
+        }
+        return nil
+    }
     
     var dataSource = [Tweet](){
         didSet{
@@ -42,6 +49,8 @@ class ViewController: UIViewController {
     func setupTableView(){
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
+        self.tableView.delegate = self
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -53,6 +62,11 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
+    }
+    
 }
 
 
@@ -65,10 +79,10 @@ extension ViewController:UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
         let tweet = self.dataSource[indexPath.row]
         
-        cell.textLabel?.text = tweet.text
+        cell.tweet = tweet
         
         return cell
     }
