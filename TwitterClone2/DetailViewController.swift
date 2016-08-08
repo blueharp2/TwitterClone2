@@ -27,6 +27,9 @@ class DetailViewController: UIViewController,Identity {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+//        self.navigationController?.navigationBar.hidden = false
+//        navigationItem.hidesBackButton = false
+
     }
     
     func setup(){
@@ -63,4 +66,5 @@ class DetailViewController: UIViewController,Identity {
             return
     }
 }
+
 }

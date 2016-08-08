@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBB-80-mjV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ILg-Fp-irQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -34,20 +34,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tfz-Iv-5Ie">
-                        <barButtonItem key="leftBarButtonItem" title="Profile" id="Qf5-td-BMQ">
-                            <connections>
-                                <segue destination="vhH-Tj-xee" kind="showDetail" identifier="ProfileViewController" id="1gm-iV-dOX"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="Qf5-td-BMQ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cwn-rJ-ou8" id="2jN-lF-iyt"/>
-                        <segue destination="8b4-X8-gre" kind="show" identifier="DetailViewController" action="showDetailViewController:sender:" id="dYj-aR-o7N"/>
+                        <segue destination="8b4-X8-gre" kind="show" identifier="DetailViewController" id="G9p-XI-wKq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="315"/>
+            <point key="canvasLocation" x="2748" y="315"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="7f6-4h-PhO">
@@ -61,20 +57,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-uu-7va">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-uu-7va">
                                 <rect key="frame" x="20" y="40" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="closeButton:" destination="vhH-Tj-xee" eventType="touchUpInside" id="vSl-dL-8Tx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQl-h3-CUp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQl-h3-CUp">
                                 <rect key="frame" x="234" y="289" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-XF-dEf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-XF-dEf">
                                 <rect key="frame" x="244" y="318" width="112" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -98,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecM-GD-IYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="1086"/>
+            <point key="canvasLocation" x="1936" y="1160"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="2AJ-It-qiU">
@@ -153,25 +149,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wS-i1-urP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="315"/>
+            <point key="canvasLocation" x="3509" y="308"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Bqq-nb-gWI">
+        <scene sceneID="ycn-G0-yPF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dBB-80-mjV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ILg-Fp-irQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nCd-0N-Oq7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yzn-xr-TfD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="O8J-GZ-Aqw"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xLq-Gj-cYL"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FIe-fI-dv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0M0-4u-O02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="312" y="315"/>
+            <point key="canvasLocation" x="1936" y="315"/>
         </scene>
     </scenes>
 </document>
